@@ -90,6 +90,8 @@ Control Voltage (Vctrl) ─┐
 
 ### 1. Schematic Design
 
+![VCO Schematic](Schematics/vcoschematic.png)
+
 - Created current-starved inverter cells in Virtuoso Schematic Editor
 - Connected 5 stages in a ring configuration
 - Added control voltage input and output buffer
@@ -121,6 +123,8 @@ Control Voltage (Vctrl) ─┐
 - Simulation time: 10.5ns
 
 ### 4. Layout Design
+
+![VCO Layout](Layouts/vcolayout.png)
 
 - **Layout Topology**: Horizontal arrangement of 5 identical stages
 - **Power Rails**: VDD (top) and GND (bottom) running horizontally across all stages
