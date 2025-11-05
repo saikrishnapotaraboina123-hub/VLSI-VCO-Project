@@ -219,7 +219,7 @@ Frequency (f) = 1/T = 1/0.75ns ≈ 1.33 GHz
 
 **Transient Analysis - Power measurement**
 
-![VCO Transient Response](SimulationResults/Power_measurement.jpg)
+![VCO Transient Response](SimulationResults/Power_measurement.png)
 
 **Key Observations:**
 - ✓ Stable, continuous oscillation achieved
