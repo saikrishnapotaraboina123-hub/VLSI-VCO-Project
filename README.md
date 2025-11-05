@@ -158,12 +158,18 @@ Control Voltage (Vctrl) ─┐
 - ✅ **Parasitic extraction**: Ready for post-layout simulation
 
 #### DRC Verification Details:
+
+![VCO DRC](Layouts/Verification/Screenshot_from_2025-10-23_16-15-29[1].png)
+
 - **Tool**: Cadence Assura/PVS
 - **Technology**: 180nm CMOS process
 - **Result**: Clean layout - zero DRC violations
 - **Rules Checked**: Minimum width, spacing, enclosure, density, antenna rules
 
 #### LVS Verification Details:
+
+![VCO LVS](Layouts/Verification/Screenshot_from_2025-10-23_16-14-53[1].png)
+
 - **Tool**: Cadence Assura LVS
 - **Technology**: 180nm CMOS process
 - **Result**: **SUCCESSFULLY COMPLETED**
@@ -335,14 +341,15 @@ Where:
 
 ```
 ├── Schematics/
-│   ├── vcoschematic.jpg          # Complete 5-stage ring oscillator schematic
+│   └── vcoschematic.jpg          # Complete 5-stage ring oscillator schematic
 ├── Layouts/
 │   ├── vco_layout.jpg             # Complete layout image
 │   ├── vco_layout.gds             # GDSII layout file
 │   └── Verification/
-│      
+│       ├──              # GDSII layout file
+│       └── 
 ├── SimulationResults/
-│   ├── oscillation_waveforms.jpg
+│   ├── Power_measurement.png
 │   ├── transient_waveform.jpg
 │   └── transient_waveform_with_power.jpg
 └── README.md
@@ -350,19 +357,18 @@ Where:
 
 ## References
 
-1.//
+1.https://irjet.net/archives/V5/i3/IRJET-V5I3191.pdf
 
 
 ## License
 
-[Specify your license - e.g., MIT, GPL, Academic Use Only]
+Cadance-virtuoso
 
 ## Acknowledgments
 
-We would like to thank [Professor/Institution Name] for guidance and access to Cadence Virtuoso tools.
+We would like to thank **Dr.Rangababu Peesapati** ,Indian Institute of Information Technology Design and Manufacturing Kurnool, Dinnedevarapadu,  Jagnnatha Gattu, Kurnool, 518007 for guidance and access to Cadence Virtuoso tools.
 
 ---
 
-**Note**: This is an academic project completed as part of [Course Name/Program] at [Institution Name].
+**Note**: This is an academic project completed as part of **EC307 - VLSI System Design Practice** at Indian Institute of Information Technology Design and Manufacturing Kurnool.
 
-For questions or collaborations, please contact: [email/contact information]
