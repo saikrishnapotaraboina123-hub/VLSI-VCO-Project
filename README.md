@@ -341,8 +341,8 @@ Where:
 │   ├── vco_layout.jpg             # Complete layout image
 │   ├── vco_layout.gds             # GDSII layout file
 │   └── Verification/
-│       ├──              # GDSII layout file
-│       └── 
+│       ├── DRC              
+│       └── LVS
 ├── SimulationResults/
 │   ├── Power_measurement.png
 │   ├── transient_waveform.jpg
