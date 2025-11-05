@@ -7,7 +7,7 @@
 [![DRC](https://img.shields.io/badge/DRC-PASSED-success)](https://github.com)
 [![LVS](https://img.shields.io/badge/LVS-PASSED-success)](https://github.com)
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Key Features](#key-features)
