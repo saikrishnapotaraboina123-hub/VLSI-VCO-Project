@@ -211,15 +211,19 @@ Frequency (f) = 1/T = 1/0.75ns ≈ 1.33 GHz
 
 ![VCO Transient Response](SimulationResults/transient_waveform.jpg)
 
-*Figure 1: Output voltage (Vout) showing stable oscillation at ~1.33 GHz with rail-to-rail swing. Simulation shows 14 complete cycles over 10.5ns time span, demonstrating consistent oscillation frequency and amplitude.*
+
 
 **Transient Analysis - Output Oscillation with power**
 
 ![VCO Transient Response](SimulationResults/transient_waveform_with_power.jpg)
 
+*Figure 2: The simulation output displays transient and power characteristics of a 5-stage VCO, highlighting periodic oscillations and internal signal dynamics over a 6 ms window. It reflects stable oscillation behavior, switching activity, and voltage transitions typical of ring-type VCO architectures under given bias conditions.*
+
 **Transient Analysis - Power measurement**
 
 ![VCO Transient Response](SimulationResults/Power_measurement.png)
+
+*Figure 2: The simulation output displays power calculation.*
 
 **Key Observations:**
 - ✓ Stable, continuous oscillation achieved
