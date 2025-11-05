@@ -1,8 +1,8 @@
-# Voltage-Controlled Oscillator (VCO) Using a 5-Stage Ring Oscillator
+# Voltage-Controlled Oscillator (VCO) Using a 5-Stage Ring Oscillator in 180nm CMOS Technology
 
 ## Project Overview
 
-This project presents the design and implementation of a Voltage-Controlled Oscillator (VCO) using a 5-stage ring oscillator topology in Cadence Virtuoso. The VCO is a fundamental building block in phase-locked loops (PLLs), frequency synthesizers, and clock generation circuits.
+This project presents the design and implementation of a Voltage-Controlled Oscillator (VCO) using a 5-stage ring oscillator topology in **180nm CMOS technology** using Cadence Virtuoso. The VCO is a fundamental building block in phase-locked loops (PLLs), frequency synthesizers, and clock generation circuits.
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ This project implements a VCO design in **180nm CMOS technology**, which offers 
 | Supply Voltage (VDD) | 1.8 | V |
 | Control Voltage (Vc) | 930m (nominal) | V |
 | Control Voltage Range | 0.5 - 1.5 | V |
-| Target Frequency Range | 500 - 2000 | MHz |
+| Achieved Frequency | 1.33 | GHz |
 | Number of Stages | 5 | - |
 | Transistor Width (Main) | 180 | nm |
 | Transistor Length (Main) | 2 | μm |
@@ -110,9 +110,15 @@ Control Voltage (Vctrl) ─┐
 
 ### 3. Simulation Setup
 
-- **Transient Analysis**: Observe oscillation frequency
-- **AC Analysis**: Evaluate phase noise performance
-- **Corner Analysis**: PVT variation testing
+- **Transient Analysis**: Observe oscillation frequency and waveform characteristics
+- **Power Analysis**: Measure average power consumption from supply
+- **Corner Analysis**: PVT variation testing (optional)
+
+**Simulation Parameters:**
+- VDD: 1.8V
+- Vc (Control voltage): 930mV
+- Temperature: 27°C (nominal)
+- Simulation time: 10.5ns
 
 ### 4. Layout Design
 
@@ -199,18 +205,6 @@ Frequency (f) = 1/T = 1/0.75ns ≈ 1.33 GHz
 
 **Note**: This measurement is at control voltage Vc = 930mV
 
-### Frequency vs. Control Voltage
-
-*To be populated with DC sweep results*
-
-| Control Voltage (V) | Frequency (MHz) | Period (ns) |
-|---------------------|-----------------|-------------|
-| 0.5 | [value] | [value] |
-| 0.7 | [value] | [value] |
-| 0.93 | ~1330 | ~0.75 |
-| 1.2 | [value] | [value] |
-| 1.5 | [value] | [value] |
-
 ### Waveforms
 
 **Transient Analysis - Output Oscillation**
@@ -227,25 +221,15 @@ Frequency (f) = 1/T = 1/0.75ns ≈ 1.33 GHz
 - ✓ No visible amplitude degradation or frequency drift
 - ✓ Approximately 50% duty cycle maintained
 
-### Performance Graphs
-
-*[Add additional plots showing:]*
-- Frequency vs. Control Voltage (VCO Tuning Curve) - **Required for complete characterization**
-- Power Consumption vs. Frequency
-- Phase Noise vs. Offset Frequency
-
 ## Performance Metrics
 
 ### Achieved Specifications
 
 - **Center Frequency**: ~1.33 GHz (at Vc = 930mV)
-- **Tuning Range**: [fmin] MHz to [fmax] MHz (requires DC sweep)
-- **Tuning Gain (KVCO)**: [value] MHz/V (requires DC sweep)
 - **Power Consumption**: 579.1 µW (0.579 mW) ✓
 - **Supply Voltage**: 1.8V
 - **Supply Current**: ~322 µA (calculated: 579.1µW / 1.8V)
 - **Output Swing**: 1.6V (0V to 1.6V)
-- **Phase Noise**: [value] dBc/Hz @ [offset] Hz (requires AC analysis)
 - **Period Jitter**: < 50 ps (estimated from waveform stability)
 - **Rise/Fall Time**: ~50 ps
 - **Duty Cycle**: ~50%
@@ -258,9 +242,6 @@ Frequency (f) = 1.33 GHz
 Power (P) = 579.1 µW = 0.579 mW
 Power Efficiency = f/P = 1.33 GHz / 0.579 mW = 2297 GHz/W (Excellent!)
 Energy per Cycle = P/f = 0.579 mW / 1.33 GHz = 0.435 fJ/cycle
-Tuning Range = (fmax - fmin) / fcenter × 100% = [To be calculated]
-KVCO = Δf / ΔVctrl = [To be calculated from DC sweep]
-Figure of Merit (FOM) = 10×log[(f₀/Δf)² × (P/1mW)] = [To be calculated]
 ```
 
 ### Design Success Criteria
@@ -272,6 +253,8 @@ Figure of Merit (FOM) = 10×log[(f₀/Δf)² × (P/1mW)] = [To be calculated]
 | Rail-to-rail swing | Yes | ✓ Yes (1.6V) | ✓ Pass |
 | Stable operation | Yes | ✓ Yes | ✓ Pass |
 | Power consumption | < 5mW | ✓ 0.579 mW | ✓ Excellent! |
+| DRC | Pass | ✓ Zero errors | ✓ Pass |
+| LVS | Pass | ✓ Successful | ✓ Pass |
 
 ### Power Analysis Summary
 
@@ -315,9 +298,7 @@ Where:
 
 | Challenge | Solution | Result |
 |-----------|----------|--------|
-| Limited tuning range | Optimized transistor sizing and control voltage range | [To be verified with DC sweep] |
 | High power consumption | Used current-starved topology for efficient operation | ✓ Achieved 0.579mW (excellent!) |
-| Phase noise | Increased number of stages and optimized bias conditions | [To be measured] |
 | Layout parasitics | Careful routing and symmetric layout techniques | ✓ Verified with clean DRC |
 | Design rule violations | Iterative layout refinement and checking | ✓ Zero DRC errors |
 | Stage matching | Symmetric placement and identical cell design | ✓ Uniform layout achieved |
@@ -330,8 +311,9 @@ Where:
 - [ ] Add frequency divider for PLL applications
 - [ ] Optimize for lower phase noise
 - [ ] Design for lower power consumption
-- [ ] Extend frequency range
+- [ ] Characterize frequency tuning range with DC sweep
 - [ ] Add temperature compensation
+- [ ] Perform post-layout simulation with extracted parasitics
 
 ## Repository Structure
 
@@ -342,31 +324,17 @@ Where:
 │   ├── vco_layout.jpg             # Complete layout image
 │   ├── vco_layout.gds             # GDSII layout file
 │   └── Verification/
-│       ├── drc_report.txt         # Design Rule Check results ✓ CLEAN
-│       ├── drc_summary.log        # DRC summary - No errors found
-│       ├── lvs_report.txt         # Layout vs Schematic results ✓ PASSED
-│       ├── lvs.log                # LVS detailed log - Completed successfully
-│       └── extraction/            # Parasitic extraction files
-│           ├── vco_extracted.sp   # Extracted netlist with parasitics
-│           └── rc_parasitics.cap  # RC parasitic capacitances
-├── Simulation_Results/
-│   ├── transient/
-│   │   ├── oscillation_waveforms.jpg
-│   │   └── frequency_measurements.txt
-│   ├── dc_sweep/
-│   │   └── vco_tuning_curve.jpg
-│   ├── ac_analysis/
-│   │   └── phase_noise.jpg
-│   └── corners/
-│       └── pvt_analysis.xlsx
-├── Documentation/
-│   ├── design_report.pdf
-│   ├── presentation.pptx
-│   └── calculation_notes.pdf
+│      
+├── SimulationResults/
+│   ├── oscillation_waveforms.jpg
+│   ├── transient_waveform.jpg
+│   └── transient_waveform_with_power.jpg
 └── README.md
 ```
 
 ## References
+
+1.//
 
 
 ## License
