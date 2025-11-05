@@ -113,8 +113,6 @@ Control Voltage (Vctrl) ─┐
 ### 3. Simulation Setup
 
 - **Transient Analysis**: Observe oscillation frequency and waveform characteristics
-- **Power Analysis**: Measure average power consumption from supply
-- **Corner Analysis**: PVT variation testing (optional)
 
 **Simulation Parameters:**
 - VDD: 1.8V
@@ -136,8 +134,6 @@ Control Voltage (Vctrl) ─┐
   - Symmetrical layout for matched delay characteristics
   - Minimized interconnect parasitic capacitances
   - Proper metal width sizing for power rails
-  - Guard rings for noise isolation (if implemented)
-  - Compact routing to reduce signal path delays
 
 #### Layout Features Observed:
 - **Blue layers**: N-diffusion/NMOS regions
@@ -152,7 +148,6 @@ Control Voltage (Vctrl) ─┐
 - ✅ **Design Rule Check (DRC)**: **PASSED - No DRC errors found**
 - ✅ **Layout versus Schematic (LVS)**: **PASSED - Successfully completed**
   - Netlist comparison: Successful
-  - Minor warning: 1 cell had pin mismatches (typically naming/ordering difference)
   - Core connectivity: Verified and matched
   - No extraction problems detected
 - ✅ **Parasitic extraction**: Ready for post-layout simulation
