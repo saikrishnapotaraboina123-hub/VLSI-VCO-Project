@@ -1,4 +1,4 @@
-# Voltage-Controlled Oscillator (VCO) Using a 5-Stage Ring Oscillator in 180nm CMOS Technology
+# Voltage-Controlled Oscillator (VCO) Using a 5-Stage Oscillator in 180nm CMOS Technology
 
 ## Project Overview
 
