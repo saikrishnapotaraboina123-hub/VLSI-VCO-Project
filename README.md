@@ -111,7 +111,6 @@ Control Voltage (Vctrl) ─┐
 ### 3. Simulation Setup
 
 - **Transient Analysis**: Observe oscillation frequency
-- **DC Sweep**: Characterize VCO tuning range
 - **AC Analysis**: Evaluate phase noise performance
 - **Corner Analysis**: PVT variation testing
 
