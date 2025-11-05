@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project presents the design and implementation of a Voltage-Controlled Oscillator (VCO) using a 5-stage ring oscillator topology in **180nm CMOS technology** using Cadence Virtuoso. The VCO is a fundamental building block in phase-locked loops (PLLs), frequency synthesizers, and clock generation circuits.
+This project presents the design and implementation of a Voltage-Controlled Oscillator (VCO) using a 5-stage oscillator topology in **180nm CMOS technology** using Cadence Virtuoso. The VCO is a fundamental building block in phase-locked loops (PLLs), frequency synthesizers, and clock generation circuits.
 
 ## Table of Contents
 
