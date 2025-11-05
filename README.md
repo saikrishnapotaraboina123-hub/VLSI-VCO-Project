@@ -213,6 +213,14 @@ Frequency (f) = 1/T = 1/0.75ns ≈ 1.33 GHz
 
 *Figure 1: Output voltage (Vout) showing stable oscillation at ~1.33 GHz with rail-to-rail swing. Simulation shows 14 complete cycles over 10.5ns time span, demonstrating consistent oscillation frequency and amplitude.*
 
+**Transient Analysis - Output Oscillation with power**
+
+![VCO Transient Response](SimulationResults/transient_waveform_with_power.jpg)
+
+**Transient Analysis - Power measurement**
+
+![VCO Transient Response](SimulationResults/Power_measurement.jpg)
+
 **Key Observations:**
 - ✓ Stable, continuous oscillation achieved
 - ✓ Clean square-wave output with sharp transitions
